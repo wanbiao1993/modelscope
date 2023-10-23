@@ -62,6 +62,7 @@ class Models(object):
     fairface = 'fairface'
     retinaface = 'retinaface'
     plant_classification = 'plant-classification'
+    plant_classification_2 = 'plant_classification_2'
     damofd = 'damofd'
     shop_segmentation = 'shop-segmentation'
     mogface = 'mogface'
@@ -318,6 +319,7 @@ class Pipelines(object):
     image_classification = 'image-classification'
     face_detection = 'resnet-face-detection-scrfd10gkps'
     plant_classification = 'plant_classification'
+    plant_classification_2 = 'plant_classification_2'
     face_liveness_ir = 'manual-face-liveness-flir'
     face_liveness_rgb = 'manual-face-liveness-flir'
     face_liveness_xc = 'manual-face-liveness-flxc'
@@ -810,6 +812,9 @@ DEFAULT_MODEL_FOR_PIPELINE = {
     Tasks.plant_classification:
     (Pipelines.plant_classification,
      'wanbiao/resnet18'),
+    Tasks.plant_classification_resnet:
+    (Pipelines.plant_classification_2,
+     'damo/cv_vit-base_image-classification_Dailylife-labels'),
     Tasks.image_object_detection:
     (Pipelines.image_object_detection_auto,
      'damo/cv_yolox_image-object-detection-auto'),
@@ -1071,6 +1076,7 @@ class Preprocessors(object):
     video_summarization_preprocessor = 'video-summarization-preprocessor'
     movie_scene_segmentation_preprocessor = 'movie-scene-segmentation-preprocessor'
     image_classification_bypass_preprocessor = 'image-classification-bypass-preprocessor'
+    plant_classification_preprocessor = 'plant-classification-preprocessor'
     object_detection_scrfd = 'object-detection-scrfd'
     image_sky_change_preprocessor = 'image-sky-change-preprocessor'
     image_demoire_preprocessor = 'image-demoire-preprocessor'

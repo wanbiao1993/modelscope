@@ -176,6 +176,7 @@ class CVTasks(object):
     bad_image_detecting = 'bad-image-detecting'
 
     plant_classification = 'plant-classification'
+    plant_classification_resnet = 'plant-classification-2'
 
 
 class NLPTasks(object):

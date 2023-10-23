@@ -18,29 +18,9 @@ logger = get_logger()
 
 
 @PIPELINES.register_module(
-    Tasks.image_classification, module_name=Pipelines.image_classification)
-@PIPELINES.register_module(
-    Tasks.image_classification,
-    module_name=Pipelines.general_image_classification)
-@PIPELINES.register_module(
-    Tasks.image_classification,
-    module_name=Pipelines.daily_image_classification)
-@PIPELINES.register_module(
-    Tasks.image_classification,
-    module_name=Pipelines.nextvit_small_daily_image_classification)
-@PIPELINES.register_module(
-    Tasks.image_classification,
-    module_name=Pipelines.convnext_base_image_classification_garbage)
-@PIPELINES.register_module(
-    Tasks.image_classification,
-    module_name=Pipelines.common_image_classification)
-@PIPELINES.register_module(
-    Tasks.image_classification,
-    module_name=Pipelines.easyrobust_classification)
-@PIPELINES.register_module(
-    Tasks.image_classification,
-    module_name=Pipelines.bnext_small_image_classification)
-class GeneralImageClassificationPipeline(Pipeline):
+    Tasks.plant_classification_resnet,
+    module_name=Pipelines.plant_classification_2)
+class PlantClassification2Pipeline(Pipeline):
 
     def __init__(self,
                  model: str,
