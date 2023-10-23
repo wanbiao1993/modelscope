@@ -175,6 +175,8 @@ class CVTasks(object):
     # bad image detecting
     bad_image_detecting = 'bad-image-detecting'
 
+    plant_classification = 'plant-classification'
+
 
 class NLPTasks(object):
     # chat

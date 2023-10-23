@@ -61,6 +61,7 @@ class Models(object):
     fer = 'fer'
     fairface = 'fairface'
     retinaface = 'retinaface'
+    plant_classification = 'plant-classification'
     damofd = 'damofd'
     shop_segmentation = 'shop-segmentation'
     mogface = 'mogface'
@@ -316,6 +317,7 @@ class Pipelines(object):
     image_demoire = 'uhdm-image-demoireing'
     image_classification = 'image-classification'
     face_detection = 'resnet-face-detection-scrfd10gkps'
+    plant_classification = 'plant_classification'
     face_liveness_ir = 'manual-face-liveness-flir'
     face_liveness_rgb = 'manual-face-liveness-flir'
     face_liveness_xc = 'manual-face-liveness-flxc'
@@ -805,6 +807,9 @@ DEFAULT_MODEL_FOR_PIPELINE = {
     Tasks.image_classification:
     (Pipelines.daily_image_classification,
      'damo/cv_vit-base_image-classification_Dailylife-labels'),
+    Tasks.plant_classification:
+    (Pipelines.plant_classification,
+     'wanbiao/resnet18'),
     Tasks.image_object_detection:
     (Pipelines.image_object_detection_auto,
      'damo/cv_yolox_image-object-detection-auto'),
