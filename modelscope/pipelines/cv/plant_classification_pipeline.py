@@ -32,25 +32,12 @@ class PlantClassificationPipeline(Pipeline):
             model: model id on modelscope hub.
         """
         super().__init__(model=model, **kwargs)
-        ckpt_path = osp.join(model, ModelFile.TORCH_MODEL_FILE)
-        logger.info(f'loading model from {ckpt_path}')
-        detector = PlantClassification(model_path=ckpt_path)
+        detector = PlantClassification(model_dir=model)
         self.detector = detector
         logger.info('load model done from fudan university by wanbiao')
 
     def preprocess(self, input: Input):
-        img_raw = LoadImage.convert_to_ndarray(input)
-        tfm = transforms.Compose([
-            transforms.ToTensor(),
-            transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
-        ])
-        # img = Image.open(input) 
-        img_tfm = tfm(img_raw)
-
-        img=img_tfm.to("cuda" if torch.cuda.is_available() else "cpu") 
-
-        img2 = img.unsqueeze(0)
-        return img2
+        return input
     
     def forward(self, input):
         result = self.detector(input)
