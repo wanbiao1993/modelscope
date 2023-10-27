@@ -1,5 +1,11 @@
 # 本fork专为实验使用
 # 请参考feat/FDU-wanbiao分支，尝试其他可能的修改
+# 验证步骤
+1. 拉去 github 中的代码
+2. 将代码根目录下的 modelscope 文件夹拷⻉到 examples/pytorch/fdu 下
+3. 运 行 examples/pytorch/fdu/fdu-gradio.py. 即 可 。
+   它 会 自 动 下 载 modelscope 中的 wanbiao/resnet18 模型.
+   若打开了命令行的网络代理，需要暂时关闭一下才能运行 gradio 的相关库
 
 
 <p align="center">
